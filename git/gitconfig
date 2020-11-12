@@ -1,13 +1,12 @@
 # This is Git's per-user configuration file.
 [user]
-        name = FULL NAME
-        email = EMAIL
-        signingkey = SIGNING KEY HASH
+        name = Gino
+        email = admin@gino.dev
 [core]
         excludesfile = global git ignore, should already be there
 [commit]
         gpgsign = true
-        template = /User/YOU/stCommitMsg
+        template = /User/gino/stCommitMsg
 [gitflow "feature.finish"]
         push = true
 [gitflow "bugfix.finish"]
