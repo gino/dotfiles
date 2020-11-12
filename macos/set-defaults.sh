@@ -11,14 +11,18 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # General UI/UX                                                               #
 ###############################################################################
 
+# Switch to the other font rendering
+# Source: https://www.howtogeek.com/358596/how-to-fix-blurry-fonts-on-macos-mojave-with-subpixel-antialiasing/
+# defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
+
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
 
 # Set sidebar icon size to medium
-defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
+# defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
 
 # Increase window resize speed for Cocoa applications
-defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
+# defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
 
 # Expand save panel by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
@@ -180,10 +184,10 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
 defaults write com.apple.dock no-bouncing -bool true
 
 # Auto hide Dock
-defaults write com.apple.dock autohide -boolean true
+# defaults write com.apple.dock autohide -boolean true
 
 # Set Dock hide/show delay at zero so we do not have to wait
-defaults write com.apple.dock autohide-delay -float 0
+# defaults write com.apple.dock autohide-delay -float 0
 
 # Set the icon size of Dock items to 40 pixels
 defaults write com.apple.dock tilesize -int 40
@@ -191,8 +195,8 @@ defaults write com.apple.dock tilesize -int 40
 # Hide indicator lights for open applications in the Dock
 defaults write com.apple.dock show-process-indicators -bool false
 
-# Disable resizing of Dock
-defaults write com.apple.dock size-immutable -bool true
+# Disable resizing of Dock (apply this when size is right)
+# defaults write com.apple.dock size-immutable -bool true
 
 # Wipe all (default) app icons from the Dock
 # This is only really useful when setting up a new Mac, or if you don’t use
