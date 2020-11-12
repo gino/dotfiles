@@ -115,6 +115,9 @@ brew cask install 1password
 echo 'Install Spotify...'
 brew cask install spotify
 
+echo 'Install Discord...'
+brew cask install discord
+
 # echo 'Install numi...'
 # brew cask install numi
 
