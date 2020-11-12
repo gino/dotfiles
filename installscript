@@ -9,9 +9,6 @@ echo '-----------------'
 rm -rf $HOME/.oh-my-zsh
 curl -L https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 
-echo 'Install powerlevel10k'
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-
 echo 'Install zsh-autosuggestions'
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
@@ -25,16 +22,6 @@ git config --global core.excludesfile $HOME/.global-gitignore
 # Symlink zsh prefs
 rm $HOME/.zshrc
 ln -s $HOME/.dotfiles/shell/.zshrc $HOME/.zshrc
-
-# Symlink powerlevel10k prefs
-rm $HOME/.p10k.zsh
-ln -s $HOME/.dotfiles/shell/.p10k.zsh $HOME/.p10k.zsh
-
-# Symlink vim prefs
-rm $HOME/.vimrc
-ln -s $HOME/.dotfiles/shell/.vimrc $HOME/.vimrc
-rm $HOME/.vim
-ln -s $HOME/.dotfiles/shell/.vim $HOME/.vim
 
 # Symlink yarn prefs
 rm $HOME/.yarnrc
@@ -60,17 +47,8 @@ brew install mas
 echo "Installing ZSH syntax highlighting"
 brew install zsh-syntax-hightlighting
 
-echo 'Install Github CLI...'
-brew install gh
-
-echo 'Install Git Flow...'
-brew install git-flow-avh
-
 echo 'Install z...'
 brew install z
-
-echo 'Install pkg-config...'
-brew install pkg-config
 
 echo 'Install wget...'
 brew install wget
@@ -78,43 +56,32 @@ brew install wget
 echo 'Install httpie...'
 brew install httpie
 
-echo 'Install ncdu...'
-brew install ncdu
-
 echo 'Install hub...'
 brew install hub
 
-echo 'Install ack...'
-brew install ack
-
-echo 'Install doctl...'
-brew install doctl
-
-echo 'Install webp...'
-brew install webp
-
-echo 'Install docker...'
-brew cask install docker
-brew install docker-compose
+# Docker (not needed yet)
+# echo 'Install docker...'
+# brew cask install docker
+# brew install docker-compose
 
 #########################################################
-### Install PHP
+### Install PHP (not needed yet)
 #########################################################
-echo 'Add henkrehorst/php tap...'
-brew tap henkrehorst/php
+# echo 'Add henkrehorst/php tap...'
+# brew tap henkrehorst/php
 
-echo 'Install PHP 7.2...'
-brew install valet-php@7.2
-brew link valet-php@7.2 --force
+# echo 'Install PHP 7.2...'
+# brew install valet-php@7.2
+# brew link valet-php@7.2 --force
 
-echo 'Install imagemagick...'
-brew install imagemagick
+# echo 'Install imagemagick...'
+# brew install imagemagick
 
-echo 'Install imagick...'
-pecl install imagick
+# echo 'Install imagick...'
+# pecl install imagick
 
-echo 'Install Prestissimo for Composer...'
-composer global require hirak/prestissimo
+# echo 'Install Prestissimo for Composer...'
+# composer global require hirak/prestissimo
 
 #########################################################
 ### Install NodeJS
@@ -133,103 +100,44 @@ fnm install 12
 fnm install 14
 fnm default 12
 
-echo 'Install gulp-cli...'
-npm install gulp-cli -g
-
 #########################################################
 ### Install GUI tools and software
 #########################################################
 echo 'Install Google Chrome...'
 brew cask install google-chrome
 
-echo 'Install Postman...'
-brew cask install postman
-
 echo 'Install iterm2...'
 brew cask install iterm2
-
-echo 'Install Jetbrains Toolbox...'
-brew cask install jetbrains-toolbox
-
-echo 'Install Slack...'
-brew cask install slack
 
 echo 'Install 1Password...'
 brew cask install 1password
 
-echo 'Install Responsively...'
-brew cask install responsively
-
 echo 'Install Spotify...'
 brew cask install spotify
 
-echo 'Install numi...'
-brew cask install numi
+# echo 'Install numi...'
+# brew cask install numi
 
-echo 'Install Vanilla...'
-brew cask install vanilla
-
-echo 'Install Toggl Track...'
-brew cask install toggl-track
-
-echo 'Install Sky Fonts...'
-brew cask install skyfonts
-
-echo 'Install Dropbox...'
-brew cask install dropbox
-
-echo 'Install Figma'
-brew cask install figma
-
-echo 'Install TablePlus'
-brew cask install tableplus
-
-echo 'Install Telegram'
-brew cask install telegram
+# echo 'Install TablePlus'
+# brew cask install tableplus
 
 echo 'Install Visual Studio Code'
 brew cask install visual-studio-code
 
-echo 'Install Cleanshot X'
-brew cask install cleanshot
-
-echo 'Install Tripmode'
-brew cask install tripmode
+# echo 'Install Cleanshot X'
+# brew cask install cleanshot
 
 echo 'Install Gifox'
 brew cask install gifox
 
-echo 'Install Magnet...'
-mas install 441258766
+# echo 'Install Magnet...'
+# mas install 441258766
 
 echo 'Install The Unarchiver...'
 mas install 425424353
 
-echo 'Install Jira Cloud for Mac..."
-mas install 1475897096
-
-echo "Install Microsoft 365 apps..."
-echo "Install Word..."
-mas install 462054704
-echo "Install Excel..."
-mas install 462058435
-echo "Install PowerPoint..."
-mas install 462062816
-echo "Install Outlook..."
-mas install 985367838
-echo "Install Onedrive..."
-mas install 823766827
-
 echo 'Install Xcode...'
 mas install 497799835
-
-###################################################################
-### Install Valet+ (as last, since its installation fails, a lot)
-###################################################################
-echo 'Install Valet+...'
-composer global require weprovide/valet-plus
-valet fix
-valet install
 
 echo '++++++++++++++++++++++++++++++'
 echo '++++++++++++++++++++++++++++++'
